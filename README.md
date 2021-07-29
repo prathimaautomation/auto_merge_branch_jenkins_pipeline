@@ -2,64 +2,34 @@
 
 ## Sparta Node Sample App
 
-## Description
 
-This app is intended for use with the Sparta Global Devops Stream as a sample app. You can clone the repo and use it as is but no changes will be accepted on this branch. 
+# Jenkins  Lab
 
-To use the repo within your course you should fork it.
+## Timings
+ 
+This lab last 30 - 60 Minutes
 
-The app is a node app with three pages.
-- trigger webhook
-### Homepage
+## Summary
 
-``localhost:3000``
+* Our current CI setup on Jenkins has one major flaw. The build is currently started and the tests are run on the master branch of the repository. This means that if the tests fail the code still exists on the master branch ( which is only supposed to contain working code ).
 
-Displays a simple homepage displaying a Sparta logo and message. This page should return a 200 response.
+* We need to reconfigure the job so that the code is tested on a different branch ( develop ) and automatically merged with the master branch if the tests pass.
 
-### Blog
+* The developers should also be informed on Github if their commit passed the tests or not and they should be notified via email too.
 
-``localhost:3000/posts``
+## Tasks
 
-This page displays a logo and 100 randomly generated blog posts. The posts are generated during the seeding step.
+* Configure your job to checkout code from the dev branch rather than the main branch
+* Have the job merge the dev branch code with the master branch and test against that
+* Use the Git publisher plugin to push the master branch to Github if the tests pass.
 
-This page and the seeding is only accessible when a database is available and the DB_HOST environment variable has been set with it's location.
+## Tips
 
-### A fibonacci number generator
+* All of these items are simple configuration provided by plugins that are already installed and setup on our Jenkins instance. If you are writing code you are doing it wrong.
 
-``localhost:3000/fibonacci/{index}``
+- You will need to research how these plugins works:
 
-This page has be implemented poorly on purpose to produce a slow running function. This can be used for performance testing and crash recovery testing.
-
-The higher the fibonacci number requested the longer the request will take. A very large number can crash or block the process.
-
-
-### Hackable code
-
-``localhost:3000/hack/{code}``
-
-There is a commented route that opens a serious security vulnerability. This should only be enabled when looking at user security and then disabled immediately afterwards
-
-## Usage
-
-Clone the app
-
-```
-npm install
-npm start
-```
-
-You can then access the app on port 3000 at one of the urls given above.
-
-## Tests
-
-There is a basic test framework available that uses the Mocha/Chai framework
-
-```
-npm test
-```
-
-The test for posts will fail ( as expected ) if the database has not been correctly setup.
-
-
+* The Github plugin
+* The Git publisher plugin
 
 

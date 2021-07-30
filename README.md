@@ -1,4 +1,4 @@
-# Multi Machine automated deployment
+# Auto merge branch jenkins pipeline
 
 ## Sparta Node Sample App
 

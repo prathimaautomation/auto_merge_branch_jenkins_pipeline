@@ -1,4 +1,4 @@
-# Auto merge branch jenkins pipeline
+# Auto merge branch jenkins pipeline to test the app, merge the dev with main and deploy into ec2 instance
 
 ## Sparta Node Sample App
 

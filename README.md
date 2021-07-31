@@ -1,4 +1,5 @@
 # Auto merge branch jenkins pipeline to test the branch, merge the dev to main and deploy into ec2 instance
+# Creating Three different Jenkins jobs triggered accordingly
 
 ## Sparta Node Sample App
 
